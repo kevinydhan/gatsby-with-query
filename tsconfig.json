@@ -3,7 +3,7 @@
     "target": "ES2015",
     "module": "ES2020",
     "declaration": true,
-    "outDir": "lib",
+    "outDir": "lib/esm",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true

@@ -4,12 +4,11 @@
   "description": "A higher-order component used to decouple Gatsby's static queries",
   "license": "MIT",
   "author": "Kevin Han <kevinhanyd@gmail.com>",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "lint": "yarn eslint --fix",
-    "eslint": "eslint './**/*.{js,jsx,ts,tsx}'"
-  },
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
   "homepage": "https://github.com/kevinydhan/gatsby-with-query",
   "repository": {
     "type": "git",
@@ -17,6 +16,14 @@
   },
   "bugs": {
     "url": "https://github.com/kevinydhan/gatsby-with-query/issues"
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "prepublishOnly": "yarn build",
+    "lint": "yarn eslint --fix",
+    "eslint": "eslint './**/*.{js,jsx,ts,tsx}'"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
