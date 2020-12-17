@@ -4,4 +4,5 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
   ],
+  ignorePatterns: ['node_modules/', 'lib/'],
 }
