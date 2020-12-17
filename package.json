@@ -1,6 +1,6 @@
 {
   "name": "gatsby-with-query",
-  "version": "0.0.2-0",
+  "version": "0.0.2",
   "description": "A higher-order component used to decouple Gatsby's static queries",
   "license": "MIT",
   "author": "Kevin Han <kevinhanyd@gmail.com>",
