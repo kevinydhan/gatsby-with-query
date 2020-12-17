@@ -6,6 +6,7 @@
   "author": "Kevin Han <kevinhanyd@gmail.com>",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "lint": "yarn eslint --fix",
     "eslint": "eslint './**/*.{js,jsx,ts,tsx}'"
   },
