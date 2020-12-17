@@ -6,7 +6,9 @@
     "outDir": "lib/esm",
     "strict": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/**"]
 }

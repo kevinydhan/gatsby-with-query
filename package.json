@@ -20,7 +20,7 @@
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc -p tsconfig.json",
-    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
     "prepublishOnly": "yarn build",
     "lint": "yarn eslint --fix",
     "eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
