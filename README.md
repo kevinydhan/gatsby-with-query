@@ -19,7 +19,7 @@ interface AppProps {
   description: string
 }
 
-const App: FunctionComponent<AppProps> = ({ title, description }) => (
+export const App: FunctionComponent<AppProps> = ({ title, description }) => (
   <main>
     <h1>{title}</h1>
     <p>{description}</p>
@@ -68,7 +68,7 @@ interface AppProps {
   description: string
 }
 
-const App: FunctionComponent<AppProps> = ({ title, description }) => (
+export const App: FunctionComponent<AppProps> = ({ title, description }) => (
   <main>
     <h1>{title}</h1>
     <p>{description}</p>
@@ -108,7 +108,7 @@ interface AppProps {
   description: string
 }
 
-const App: FunctionComponent<AppProps> = ({ title, description }) => (
+export const App: FunctionComponent<AppProps> = ({ title, description }) => (
   <main>
     <h1>{title}</h1>
     <p>{description}</p>

@@ -1,6 +1,12 @@
-import { createElement, FunctionComponent } from 'react'
+import { FunctionComponent, createElement } from 'react'
+
+interface UseQueryHook<Props> {
+  (receivedProps: Partial<Props>): Partial<Props>
+}
 
 /**
+ * @template Props - React component's `props`
+ *
  * @param Component <br>
  * - can be a `FunctionComponent`
  * - can be a class `Component`
@@ -16,18 +22,22 @@ import { createElement, FunctionComponent } from 'react'
  * - should accept a subset of the component's `props` OR all of the `props`
  *   - any overlapping `props.<key>` should preferred
  */
-export type WithQuery = <Props = Record<string, never>>(
+export type WithQuery = <Props = Record<string, unknown>>(
   Component: FunctionComponent<Props>,
-  useQueryHook: () => Props
-) => FunctionComponent<ReturnType<typeof useQueryHook>>
+  useQueryHook: UseQueryHook<Props>
+) => FunctionComponent<Partial<Props>>
 
 const withQuery: WithQuery = (Component, useQueryHook) => {
   const WithQueryHOC: ReturnType<WithQuery> = (receivedProps) => {
-    const queriedProps = useQueryHook()
-    return createElement(Component, {
-      ...queriedProps,
-      ...receivedProps,
-    })
+    const props = useQueryHook(receivedProps)
+
+    /**
+     * @todo
+     * - Figure out the proper typing for `props`
+     */
+    // eslint-disable-next-line
+    // @ts-ignore
+    return createElement(Component, props)
   }
 
   const componentName = Component.displayName || Component.name || 'Component'
