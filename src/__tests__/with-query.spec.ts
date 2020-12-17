@@ -1,6 +1,6 @@
 import withQuery from '../with-query'
 
-describe('withQuery', () => {
+describe('withQuery object', () => {
   it('is defined', () => {
     expect(withQuery).toBeDefined()
   })
@@ -10,7 +10,16 @@ describe('withQuery', () => {
   })
 
   it('returns a function', () => {
-    const WithQueryHOC = withQuery()
+    const WithQueryHOC = withQuery(
+      () => null,
+      () => ({})
+    )
     expect(typeof WithQueryHOC).toBe('function')
+  })
+})
+
+describe("withQuery's arguments", () => {
+  it('accepts as React component as its first argument', () => {
+    expect(true)
   })
 })

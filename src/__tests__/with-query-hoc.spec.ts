@@ -9,7 +9,10 @@ describe("WithQueryHOC's arguments", () => {
 
 describe("WithQueryHOC's return value", () => {
   xit('is a React element', () => {
-    const WithQueryHOC = withQuery()
+    const WithQueryHOC = withQuery(
+      () => null,
+      () => ({})
+    )
     expect(isValidElement(WithQueryHOC)).toBe(true)
   })
 })
