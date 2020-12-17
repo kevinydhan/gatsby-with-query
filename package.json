@@ -5,6 +5,10 @@
   "license": "MIT",
   "author": "Kevin Han <kevinhanyd@gmail.com>",
   "main": "index.js",
+  "scripts": {
+    "lint": "yarn eslint --fix",
+    "eslint": "eslint './**/*.{js,jsx,ts,tsx}'"
+  },
   "homepage": "https://github.com/kevinydhan/gatsby-with-query",
   "repository": {
     "type": "git",
@@ -16,6 +20,10 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
     "commitlint": "^11.0.0",
-    "husky": "^4.3.6"
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1"
   }
 }
