@@ -1,9 +1,16 @@
 import withQuery from '../with-query'
 
-test('is a function', () => {
-  expect(typeof withQuery).toBe('function')
-})
+describe('withQuery', () => {
+  it('is defined', () => {
+    expect(withQuery).toBeDefined()
+  })
 
-test('returns a function', () => {
-  expect(typeof withQuery()).toBe('function')
+  it('is a function', () => {
+    expect(typeof withQuery).toBe('function')
+  })
+
+  it('returns a function', () => {
+    const WithQueryHOC = withQuery()
+    expect(typeof WithQueryHOC).toBe('function')
+  })
 })

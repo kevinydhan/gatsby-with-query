@@ -1,3 +1,5 @@
+import { createElement } from 'react'
+
 type WithQuery = () => () => void
 
 const withQuery: WithQuery = () => {
