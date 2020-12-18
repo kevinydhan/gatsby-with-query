@@ -38,6 +38,18 @@ export type WithQuery = <Props = Record<string, unknown>>(
  * @returns - Higher-order component
  */
 const withQuery: WithQuery = (Component, useQueryHook) => {
+  if (typeof Component !== 'function') {
+    throw new Error(
+      `Expected a React component as the first argument for withQuery(). Instead, got: ${typeof Component}.`
+    )
+  }
+
+  if (typeof useQueryHook !== 'function') {
+    throw new Error(
+      `Expected a function as the second argument for withQuery(). Instead, got: ${typeof useQueryHook}.`
+    )
+  }
+
   const WithQueryHOC: ReturnType<WithQuery> = (receivedProps) => {
     const props = useQueryHook(receivedProps)
 
