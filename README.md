@@ -1,33 +1,34 @@
 # gatsby-with-query
 
-A higher-order component used to decouple Gatsby's static queries
+`withQuery` is a higher-order component that is used to decouple [Gatsby][gh-gatsby]'s static queries.
 
-<br>
 <hr>
 
-### Example 1
+## Table of Contents
 
-```tsx
-// App.tsx
-import React, { FunctionComponent } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import withQuery from 'gatsby-with-query'
-import useGetSiteMetadataQuery from './App.query'
+- [Installation](#installation)
+- [Usage](#usage)
 
-interface AppProps {
-  title: string
-  description: string
-}
+<hr>
 
-export const App: FunctionComponent<AppProps> = ({ title, description }) => (
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </main>
-)
+## Installation
 
-export default withQuery<AppProps>(App, useGetSiteMetadataQuery)
+```sh
+npm i gatsby-with-query
 ```
+
+```sh
+yarn gatsby-with-query
+```
+
+<hr>
+
+### Usage
+
+Create the following:
+
+- your GraphQL query using Gatsby's `graphql()`
+- a React hook which invokes Gatsby's `useStaticQuery()` and returns either all or a subset of your component's `props`
 
 ```tsx
 // App.query.tsx
@@ -52,10 +53,30 @@ const useGetSiteMetadataQuery = () => {
 export default useGetSiteMetadataQuery
 ```
 
-<br>
-<hr>
+Then, import the React hook and `withQuery()` into your component's file:
 
-### Example 2
+```tsx
+// App.tsx
+import React, { FunctionComponent } from 'react'
+import withQuery from 'gatsby-with-query'
+import useGetSiteMetadataQuery from './App.query'
+
+interface AppProps {
+  title: string
+  description: string
+}
+
+export const App: FunctionComponent<AppProps> = ({ title, description }) => (
+  <main>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </main>
+)
+
+export default withQuery<AppProps>(App, useGetSiteMetadataQuery)
+```
+
+Alternatively, you can have your React component, GraphQL query, and React query hook in the same file:
 
 ```tsx
 // App.tsx
@@ -92,43 +113,4 @@ export default withQuery<AppProps>(App, () => {
 })
 ```
 
-<br>
-<hr>
-
-### Example 3(?)
-
-```tsx
-// App.tsx
-import React, { FunctionComponent } from 'react'
-import { graphql, StaticQuery } from 'gatsby'
-import withQuery from 'gatsby-with-query'
-
-interface AppProps {
-  title: string
-  description: string
-}
-
-export const App: FunctionComponent<AppProps> = ({ title, description }) => (
-  <main>
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </main>
-)
-
-const query = graphql`
-  query GetSiteMetadata {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-  }
-`
-
-export default withQuery<AppProps>(() => (
-  <StaticQuery query={query}>
-    {(queriedProps) => <App {...queriedProps} />}
-  </StaticQuery>
-))
-```
+[gh-gatsby]: https://github.com/gatsbyjs/gatsby
