@@ -53,6 +53,8 @@ const useGetSiteMetadataQuery = () => {
 export default useGetSiteMetadataQuery
 ```
 
+<br>
+
 Then, import the React hook and `withQuery()` into your component's file:
 
 ```tsx
@@ -75,6 +77,8 @@ export const App: FunctionComponent<AppProps> = ({ title, description }) => (
 
 export default withQuery<AppProps>(App, useGetSiteMetadataQuery)
 ```
+
+<br>
 
 Alternatively, you can have your React component, GraphQL query, and React query hook in the same file:
 
