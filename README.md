@@ -32,7 +32,7 @@ Create the following:
 
 ```tsx
 // App.query.tsx
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const query = graphql`
   query GetSiteMetadata {
