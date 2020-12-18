@@ -23,7 +23,7 @@ yarn gatsby-with-query
 
 <br>
 
-### Usage
+## Usage
 
 Create the following:
 
