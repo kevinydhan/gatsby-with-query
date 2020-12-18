@@ -1,6 +1,6 @@
 import { FunctionComponent, createElement } from 'react'
 
-interface UseQueryHook<Props> {
+export interface UseQueryHook<Props> {
   (receivedProps: Partial<Props>): Partial<Props>
 }
 
