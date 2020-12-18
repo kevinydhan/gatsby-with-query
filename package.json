@@ -25,7 +25,7 @@
     "lint": "yarn eslint --fix",
     "eslint": "eslint './**/*.{js,jsx,ts,tsx}'",
     "jest": "jest",
-    "jest:watch": "yarn jest --watchAll"
+    "jest:watch": "yarn jest --watchAll --verbose"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
