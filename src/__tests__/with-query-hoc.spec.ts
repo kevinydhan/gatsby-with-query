@@ -3,19 +3,11 @@
  */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { createElement, isValidElement } from 'react'
+import { createElement } from 'react'
 import withQuery from '../with-query'
 
 const DivComponent = () => createElement('div')
 const emptyQueryHook = () => ({})
-
-describe('WithQueryHOC', () => {
-  it('returns a React element', () => {
-    const WithQueryHOC = withQuery(DivComponent, emptyQueryHook)
-    const CreatedWithQueryHOC = createElement(WithQueryHOC)
-    expect(isValidElement(CreatedWithQueryHOC)).toBe(true)
-  })
-})
 
 describe('WithQueryHOC.displayName', () => {
   it('is defined', () => {
