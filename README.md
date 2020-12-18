@@ -18,7 +18,7 @@ npm i gatsby-with-query
 ```
 
 ```sh
-yarn gatsby-with-query
+yarn add gatsby-with-query
 ```
 
 <br>
