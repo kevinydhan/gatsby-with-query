@@ -2,14 +2,14 @@
 
 `withQuery` is a higher-order component that is used to decouple [Gatsby][gh-gatsby]'s static queries.
 
-<hr>
+<br>
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 
-<hr>
+<br>
 
 ## Installation
 
@@ -21,7 +21,7 @@ npm i gatsby-with-query
 yarn gatsby-with-query
 ```
 
-<hr>
+<br>
 
 ### Usage
 
