@@ -27,6 +27,16 @@ export type WithQuery = <Props = Record<string, unknown>>(
   useQueryHook: UseQueryHook<Props>
 ) => FunctionComponent<Partial<Props>>
 
+/**
+ * Returns a higher-order component which invokes the input hook and renders
+ * the input component.
+ *
+ * @param Component - Base React component
+ * @param useQueryHook - React hook which executes `useStaticQuery()` from
+ * `gatsby`
+ *
+ * @returns - Higher-order component
+ */
 const withQuery: WithQuery = (Component, useQueryHook) => {
   const WithQueryHOC: ReturnType<WithQuery> = (receivedProps) => {
     const props = useQueryHook(receivedProps)
